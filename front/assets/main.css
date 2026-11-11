@@ -1,46 +1,312 @@
-/* App-wide styling */
+/* =========================
+   GLOBAL STYLING
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #0f1116;
-    color: #ffffff;
+    background: #f8fafc;
+    color: #1e293b;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px;
-}
-
-#hero {
     margin: 0;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+
+.app-container {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 14px 8%;
+    background: white;
 }
 
-#links {
-    width: 400px;
-    text-align: left;
-    font-size: x-large;
-    color: white;
-    display: flex;
-    flex-direction: column;
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: -1px;
 }
 
-#links a {
-    color: white;
-    text-decoration: none;
-    margin-top: 20px;
-    margin: 10px 0px;
-    border: white 1px solid;
-    border-radius: 5px;
-    padding: 10px;
-}
-
-#links a:hover {
-    background-color: #1f1f1f;
+.menu-button {
+    display: none;
+    font-size: 25px;
     cursor: pointer;
 }
 
-#header {
-    max-width: 1200px;
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 10%;
+    gap: 10px;
+    min-height: fit-content;
 }
 
+.hero-content {
+    max-width: 550px;
+}
 
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #2563eb;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
 
+.hero h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #0f172a;
+    letter-spacing: -2px;
+}
+
+.highlight {
+    color: #2563eb;
+}
+
+.hero-description {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #64748b;
+    max-width: 450px;
+}
+
+.hero-info {
+    margin-top: 30px;
+}
+
+.info-item {
+    margin: 12px 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.info-item span {
+    color: #2563eb;
+    margin-right: 8px;
+}
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 320px;
+    background: #dbeafe;
+    border-radius: 30px;
+    flex-shrink: 0;
+}
+
+.visual-card {
+    background: white;
+    width: 260px;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.12);
+}
+
+.visual-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.visual-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.visual-card p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.visual-line {
+    height: 9px;
+    width: 100%;
+    background: #dbeafe;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.visual-line.short {
+    width: 65%;
+    margin-top: 10px;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section {
+    text-align: center;
+    padding: 55px 20px;
+    background: white;
+}
+
+.cta-section h2 {
+    font-size: 30px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.cta-section p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+.signup-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.login-text {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 18px 6%;
+    }
+
+    .menu-button {
+        display: block;
+        border: none;
+        background: transparent;
+        color: #2563eb;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 7% 45px;
+        gap: 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        margin: auto;
+    }
+
+    .hero-info {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 380px;
+        height: 280px;
+    }
+
+    .visual-card {
+        width: 80%;
+    }
+
+    .cta-section {
+        padding: 45px 20px;
+    }
+
+    .cta-section h2 {
+        font-size: 25px;
+    }
+
+    .signup-button {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE SCREENS
+========================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero {
+        padding: 40px 6%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+}

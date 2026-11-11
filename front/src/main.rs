@@ -1,3 +1,5 @@
+use dioxus::{logger::tracing, prelude::*};
+
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const MAIN_CSS: Asset = asset!("/assets/main.css");
@@ -14,26 +16,44 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+
+        div { class: "app-container",
+
+            header { class: "navbar",
+                div { class: "logo", "PSJOB" }
+                button { class: "menu-button", "▤" }
+            }
+        }
         Hero {}
         Cta {}
+        footer { class: "footer", "© 2026 PSJOB. Find your Hustle." }
 
     }
 }
 
 #[component]
-pub fn Hero() -> Element {
+fn Hero() -> Element {
     rsx! {
-        div { id: "title",
-            h1 { "PSJOB" }
+        section { class: "hero",
+            div { class: "hero-content",
+                span { class: "badge", "Making a living" }
+                h1 { class: "highlight", "Find your job" }
+            }
         }
-        "See available Jobs"
+    }
+}
+#[component]
+fn Cta() -> Element {
+    rsx! {
+        section { class: "cta-section",
+
+            h1 { "Ready to get started?" }
+            div {
+                button { class: "signup-button", "Sign Up ➡️" }
+            }
+        }
     }
 }
 
-pub fn Cta() -> Element {
-    rsx! {
-        div {
-            button { onclick, "Sign Up" }
-        }
-    }
-}
+
+
